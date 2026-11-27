@@ -1,5 +1,348 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+.footer {
+  padding: 10px;
+  block-size: 100vh;
+  place-items: center;
+  min-block-size: 668px;
+  display: grid;
+}
+
+.content-section__list {
+  gap: 20px;
+  min-inline-size: 0;
+  display: grid;
+}
+
+.gallery__item img {
+  inline-size: 100%;
+  display: block;
+  object-fit: cover;
+  block-size: 100%;
+}
+
+.header__rec::after {
+  inset-inline-end: -19px;
+  content: '';
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px currentColor;
+  block-size: 9px;
+  position: absolute;
+  background-color: currentColor;
+  inset-block-start: 8px;
+  inline-size: 9px;
+}
+
+.content-card__title {
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.content-card__title_regular {
+  font-weight: normal;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  border-color: var(--decor-color, rgb(255 0 112));
+  pointer-events: none;
+  position: absolute;
+  inline-size: 25px;
+  border-style: solid;
+  content: '';
+  block-size: 25px;
+}
+
+.main {
+  padding: 40px 10px;
+  display: grid;
+  gap: 50px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 1px 13px;
+  text-transform: lowercase;
+  cursor: pointer;
+  background: transparent;
+  color: var(--decor-color, rgb(255 0 112));
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover-color, rgba(255, 0, 112, 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button_active,
+.header__theme-menu-button_active:hover {
+  pointer-events: none;
+  border-color: currentColor;
+}
+
+.content-link:focus {
+  outline: none;
+}
+
+.content-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-shadow-color, rgb(255 0 112));
+}
+
+.content-link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.content-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.title-decor {
+  color: var(--decor-text-color, rgb(0 0 40));
+  background-color: var(--accent-color, rgb(255 0 112));
+}
+
+.content-section__subtitle {
+  font-size: inherit;
+  margin-block-end: 20px;
+  font-weight: bold;
+}
+
+.gallery__list {
+  gap: 10px;
+  display: grid;
+}
+
+.header__description {
+  font-weight: bold;
+  justify-self: end;
+  max-inline-size: 355px;
+  align-self: center;
+}
+
+.decorated-zone::after {
+  inset-block-end: 10px;
+  border-width: 0 0 1px 1px;
+  inset-inline-start: 10px;
+}
+
+.decorated-zone::before {
+  border-width: 1px 1px 0 0;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+}
+
+.header__theme-menu-list {
+  flex-direction: column;
+  align-items: end;
+  display: flex;
+  gap: 10px;
+}
+
+.content-card__text {
+  margin-block-start: 10px;
+}
+
+.content-card__text + .content-card__text {
+  margin-block-start: 20px;
+}
+
+.footer__title,
+.header__title {
+  font-weight: bold;
+  color: var(--title-color, rgb(219 0 255));
+  line-height: 0.825;
+  font-size: clamp(7.25rem, calc(7.0115rem + 1.0178vw), 7.5rem);
+  text-shadow: 4px 4px 0 var(--title-shadow-color, rgb(255 0 112));
+}
+
+.header__title {
+  margin-inline-start: -10px;
+}
+
+.content-section {
+  display: grid;
+  gap: 20px;
+}
+
+.gallery__item {
+  min-inline-size: 0;
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  max-inline-size: 1440px;
+  color: var(--text-color, rgb(241 178 206));
+  font-size: 18px;
+  background-position: center;
+  background-attachment: fixed;
+  margin-inline: auto;
+  background-image: var(--background-image);
+  font-family: var(--font-family, monospace);
+  min-inline-size: 375px;
+  background-size: cover;
+  line-height: 1.3;
+  background-color: var(--background-color, rgb(0 0 40));
+}
+
+.header {
+  min-block-size: 668px;
+  padding: 10px;
+  grid-template-rows: 1fr min-content 1fr;
+  display: grid;
+  block-size: 100vh;
+}
+
+.content-section__title {
+  font-size: inherit;
+  font-weight: bold;
+  color: var(--section-title-color, rgb(255 0 112));
+}
+
+.header__rec {
+  inset-block-start: 10px;
+  color: var(--accent-color, rgb(255 0 112));
+  inset-inline-end: 38px;
+  line-height: 25px;
+  position: absolute;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.gallery__title {
+  font-weight: bold;
+  font-size: inherit;
+  margin-block-end: 10px;
+}
+
+@media (width >= 768px) {
+  .gallery__list {
+    grid-template-rows: repeat(3, minmax(0, auto));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+
+  .header__title {
+    margin-inline-start: -20px;
+  }
+
+  .content-section {
+    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .footer,
+  .header {
+    padding: 20px;
+    min-block-size: 768px;
+  }
+
+  .header__description {
+    max-inline-size: 364px;
+  }
+
+  .gallery__item:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2 / 4;
+  }
+
+  .content-section__body {
+    min-inline-size: 0;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .footer__title,
+  .header__title {
+    font-size: clamp(7.5rem, calc(0.5625rem + 14.4531vw), 9.8125rem);
+  }
+
+  .gallery__item:nth-child(2) {
+    grid-row: 1 / 3;
+    grid-column: 3;
+  }
+
+  .main {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .content-section_wide .content-section__title {
+    margin-block-end: 20px;
+    inline-size: calc((100% - 20px) / 3);
+  }
+
+  .header__rec {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .content-section_wide {
+    display: block;
+  }
+
+  .gallery__title {
+    margin-block-end: 20px;
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+
+  .gallery__item:nth-child(3) {
+    grid-row: 2 / 4;
+    grid-column: 1;
+  }
+}
+
+@media (width >= 1024px) {
+  .content-section_wide .content-section__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .header__description {
+    max-inline-size: 491px;
+  }
+
+  .content-section_wide {
+    display: block;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .content-section_wide .content-section__title {
+    inline-size: calc((100% - 40px) / 3);
+    margin-block-end: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
 }
